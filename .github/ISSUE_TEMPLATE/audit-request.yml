@@ -1,0 +1,53 @@
+name: 申请 $100 网关健康审计
+description: 只提交公开或已脱敏的售前范围信息；不要粘贴任何密钥、Token 或公司数据。
+title: "[Audit Request] 网关类型 / 主要症状"
+labels: ["audit-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 隐私提醒
+        **不要提交 API Key、OAuth Token、Cookie、SSH 密钥、公司代码、客户数据、完整私有日志或真实账号文件。**
+        此 Issue 只用于确认是否适合 $100 固定试单；正式开工前会再次确认范围、付款条件和 48 小时交付起点。
+  - type: dropdown
+    id: gateway
+    attributes:
+      label: 网关类型
+      options:
+        - CPA / CLIProxyAPI
+        - Sub2API
+        - New API
+        - 其他 OpenAI-compatible 网关
+    validations:
+      required: true
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 主要症状（请脱敏）
+      description: 例如间歇 401/429/503、请求挂起、路由错误、重启后统计回退。
+    validations:
+      required: true
+  - type: textarea
+    id: topology
+    attributes:
+      label: 最小拓扑
+      description: 只写组件和流向，不写 IP、域名、账号或密钥。
+      placeholder: 客户端 → 网关 → OAuth 账号池 / API Key 上游
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 网关版本
+      placeholder: 例如 Sub2API vX.Y / CPA vX.Y
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 范围确认
+      options:
+        - label: 我只会提交公开或已脱敏信息，不提交任何凭据或公司/客户数据。
+          required: true
+        - label: 我理解本试单只交付报告和回滚步骤，不包含生产环境修改。
+          required: true
+        - label: 若双方确认适合，我接受固定价格 100 USD、付款及材料齐全后 48 小时交付。
+          required: true

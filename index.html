@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="48 小时完成 AI API 网关只读健康审计：路由、配额、可观测性、重启恢复与回滚方案。固定试单价 100 美元。" />
+  <title>AI API 网关健康审计｜$100 固定试单</title>
+  <style>
+    :root{--bg:#07111f;--panel:#0e1b2d;--line:#20334c;--text:#edf5ff;--muted:#9db0c9;--accent:#6ee7b7;--warn:#fbbf24;--blue:#60a5fa;--max:1040px}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#17375b 0,transparent 34%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.65}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;color:var(--muted)}.brand{font-weight:800;color:var(--text)}.pill{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.02;margin:14px 0 22px;letter-spacing:-.04em}.lead{font-size:20px;color:var(--muted);max-width:720px}.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:12px;background:var(--accent);color:#052016}.btn.alt{background:transparent;color:var(--text);border:1px solid var(--line)}.price{background:linear-gradient(160deg,#12243b,#0b1728);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 20px 70px #0006}.price .money{font-size:58px;font-weight:900;line-height:1}.price small,.muted{color:var(--muted)}.price ul{padding-left:20px;margin:22px 0 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}.card h3{margin-top:0}.section{padding:48px 0}.section h2{font-size:32px;margin:0 0 22px}.steps{counter-reset:s}.step{display:grid;grid-template-columns:52px 1fr;gap:16px;margin:18px 0}.step:before{counter-increment:s;content:counter(s);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#12304a;color:var(--accent);font-weight:900}.notice{border-left:4px solid var(--warn);background:#2a210d;padding:18px 20px;border-radius:0 12px 12px 0}.sample{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#050b14;border:1px solid var(--line);border-radius:14px;padding:20px;overflow:auto;color:#c6d7eb}.ok{color:var(--accent)}.bad{color:#fb7185}.footer{padding:40px 0 64px;color:var(--muted);border-top:1px solid var(--line);margin-top:48px}@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:42px}.grid{grid-template-columns:1fr}.hero h1{font-size:46px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav"><span class="brand">Gateway Health Audit</span><span class="pill">只读审计 · 不碰生产</span></nav>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">AI API Gateway Reliability Review</div>
+          <h1>别等网关半死不活，<br>才开始找回滚点。</h1>
+          <p class="lead">面向自建 CPA、Sub2API、New API 与 OpenAI-compatible 网关：48 小时交付一份可执行的健康审计、故障优先级和安全回滚方案。</p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/czc6666/ai-gateway-health-audit/issues/new?template=audit-request.yml">申请 $100 试单</a>
+            <a class="btn alt" href="#sample">查看样例结构</a>
+          </div>
+        </div>
+        <aside class="price">
+          <small>首位客户固定试单</small>
+          <div class="money">$100</div>
+          <small>单网关 · 48 小时 · 一次答疑</small>
+          <ul>
+            <li>路由与账号池风险图</li>
+            <li>配额/错误码/超时诊断</li>
+            <li>重启恢复与数据持久化检查</li>
+            <li>按优先级排列的修复清单</li>
+            <li>可回退的变更步骤</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section">
+        <h2>适合哪种现场</h2>
+        <div class="grid">
+          <article class="card"><h3>请求能通，但不稳定</h3><p class="muted">间歇 401/429/503、长时间挂起、同模型时好时坏，不知道是上游、账号池还是路由。</p></article>
+          <article class="card"><h3>迁移后心里没底</h3><p class="muted">CPA → Sub2API / New API 后缺少回滚口径，配置能跑但不确定重启、统计和故障切换是否可靠。</p></article>
+          <article class="card"><h3>账面与真实不一致</h3><p class="muted">模型映射、上下文、配额统计、账号状态或用量持久化，与真实请求结果对不上。</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>你会收到什么</h2>
+        <div class="steps">
+          <div class="step"><div><strong>现状拓扑图</strong><br><span class="muted">入口、网关、账号池、上游、路由与回滚出口。</span></div></div>
+          <div class="step"><div><strong>证据化健康报告</strong><br><span class="muted">每项结论附配置/命令/响应证据，不把“服务在跑”当成“链路健康”。</span></div></div>
+          <div class="step"><div><strong>P0 / P1 / P2 修复清单</strong><br><span class="muted">先处理会导致中断、数据覆盖或不可回滚的问题，再处理性能和体验。</span></div></div>
+          <div class="step"><div><strong>安全执行与回滚步骤</strong><br><span class="muted">标明只读项、需审批项、备份点、验证命令和失败回退路径。</span></div></div>
+          <div class="step"><div><strong>30 分钟异步答疑</strong><br><span class="muted">交付后一次文字答疑，范围限于本报告。</span></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="sample">
+        <h2>脱敏样例结构</h2>
+        <pre class="sample"><span class="ok">PASS</span> 入口 /v1/models 与最小 completion 实测可达
+<span class="bad">P0</span> 重启脚本会用陈旧 SQLite 快照覆盖最新 usage 总账
+<span class="bad">P1</span> API-key 类型账号配置了仅对 OAuth 生效的 model_mapping
+<span class="bad">P1</span> 健康检查只验证进程，不验证真实上游请求
+<span class="ok">ROLLBACK</span> 保留旧端口 + 导出 live usage + 影子实例验证后切流
+
+交付结论：当前可运行，但不满足“可安全重启、可解释路由、可证据化回滚”。</pre>
+      </section>
+
+      <section class="section">
+        <h2>最小输入与隐私边界</h2>
+        <div class="grid">
+          <article class="card"><h3>你提供</h3><p class="muted">脱敏拓扑、版本、错误码/时间点、去密钥配置片段，以及可公开或已脱敏的响应。可以先只发字段名和结构。</p></article>
+          <article class="card"><h3>我不需要</h3><p class="muted">API Key、OAuth token、公司代码、客户数据、完整日志、SSH 密钥或生产写权限。</p></article>
+          <article class="card"><h3>默认只读</h3><p class="muted">本试单只交付报告与步骤，不登录服务器、不重启服务、不改生产配置。任何后续执行另行确认。</p></article>
+        </div>
+        <p class="notice"><strong>不是安全认证或 SLA 保证。</strong> 这是工程健康审计与故障规避建议；若材料不足，会明确标注“无法证明”，不会编造结论。</p>
+      </section>
+
+      <section class="section">
+        <h2>成交条件</h2>
+        <p class="lead">确认范围后，固定价格 $100；收到付款与脱敏材料后 48 小时交付。若我在开工前判断不适合，会拒单；若超时未交付，退还已付款。首位客户完成后此试单价关闭。</p>
+        <div class="cta"><a class="btn" href="https://github.com/czc6666/ai-gateway-health-audit/issues/new?template=audit-request.yml">提交脱敏需求</a></div>
+      </section>
+    </main>
+    <footer class="footer">独立工程服务实验 · 不隶属于任何网关项目 · GitHub Issue 仅用于公开或脱敏的售前范围确认</footer>
+  </div>
+</body>
+</html>
